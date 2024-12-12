@@ -1,0 +1,10 @@
+@import './vars.scss';
+
+body {
+  background-color: $black;
+}
+
+p, h1, h2 {
+  font-family: sans-serif;
+  color: $text-prime;
+}

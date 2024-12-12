@@ -1,0 +1,15 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "baseUrl": ".",
+    "lib": ["ES2015"],
+    "outDir": "./apps/*/dist",
+    "types": ["node", "jest", "vue"],
+    "paths": {
+      "@repo": ["packagess"],
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["."]
+}
