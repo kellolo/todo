@@ -1,0 +1,25 @@
+{
+  "name": "toaster-widget",
+  "version": "1.0.0",
+  "main": "dist/toaster-widget.cjs.js",
+  "module": "dist/toaster-widget.esm.js",
+  "types": "dist/toaster-widget.d.ts",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "vue": "3.x",
+    "primevue": "3.x"
+  },
+  "devDependencies": {
+    "vite": "4.x",
+    "typescript": "4.x",
+    "tsup": "5.x"
+  },
+  "peerDependencies": {
+    "vue": "3.x"
+  },
+  "author": "kellolo",
+  "license": "MIT"
+}

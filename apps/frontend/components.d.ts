@@ -12,11 +12,13 @@ declare module 'vue' {
     Form: typeof import('@primevue/forms/form')['default']
     FormAuth: typeof import('./src/components/pages/HomePage/Auth/components/FormAuth/FormAuth.vue')['default']
     Header: typeof import('./src/components/layout/Header/Header.vue')['default']
+    Info: typeof import('./src/components/layout/Info/Info.vue')['default']
     InputText: typeof import('primevue/inputtext')['default']
     MainLayout: typeof import('./src/components/layout/MainLayout/MainLayout.vue')['default']
     Password: typeof import('primevue/password')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TestComp: typeof import('./src/components/pages/HomePage/TestComp/TestComp.vue')['default']
+    Toast: typeof import('primevue/toast')['default']
   }
 }

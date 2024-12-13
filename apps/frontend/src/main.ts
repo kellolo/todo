@@ -9,6 +9,8 @@ import Aura from '@primevue/themes/aura'
 import App from './App.vue'
 import router from './router'
 
+import { ToasterPlugin } from '@repo/widgets'
+
 const app = createApp(App)
 
 app.use(createPinia())
@@ -18,5 +20,6 @@ app.use(PrimeView, {
     preset: Aura,
   },
 })
+app.use(ToasterPlugin)
 
 app.mount('#app')
