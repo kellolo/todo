@@ -1,18 +1,17 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "tsup --watch --onSuccess \"node dist/index.cjs\"",
+    "dev": "tsup --watch --onSuccess \"node dist/index.js\"",
     "build": "tsup",
     "clean": "rm -rf dist",
     "typecheck": "tsc --noEmit",
     "lint": "eslint"
   },
   "keywords": [],
-  "author": "",
+  "author": "kellolo",
   "license": "ISC",
   "description": "",
   "devDependencies": {

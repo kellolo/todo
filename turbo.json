@@ -26,8 +26,7 @@
     "dev": {
       "dependsOn": ["^build"],
       "cache": false,
-      "persistent": true,
-      "env": ["VITE_APP_PORT"]
+      "persistent": true
     },
     "clean": {
       "cache": false

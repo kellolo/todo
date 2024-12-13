@@ -1,6 +1,6 @@
 import express, { Application } from 'express'
-import { Router } from '@/routes'
-import { BASE__CONFIG } from '@/configs'
+import { Router } from 'src/routes'
+import { BASE__CONFIG } from 'src/configs'
 import { serverCors } from './cors'
 // import { errorHandler } from '../middlewares/errorHandler'
 
@@ -31,7 +31,7 @@ export class Server {
   // Метод для подключения обработки ошибок
   private initializeErrorHandling() {
     // this.app.use(errorHandler)
-    console.log('ERROR__Router')
+    // console.log('ERROR__Router')
   }
 
   // Метод для запуска сервера

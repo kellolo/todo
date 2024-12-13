@@ -9,7 +9,7 @@ class APIAuth extends APIService<{}> {
 
   async login(data: AuthData) {
     try {
-      const response = await this.post('/', data)
+      const response = await this.post('/login', data)
       if (response?.token) {
         this.instance.setToken(response.token)
       }

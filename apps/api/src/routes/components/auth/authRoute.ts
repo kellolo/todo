@@ -1,5 +1,6 @@
 import { BaseRoute } from '../baseRoute'
-
+import { authController } from 'src/controllers'
+import type { REQUEST, AUTH__REQUEST__BODY } from 'src/types'
 const AuthController = {
   login: () => {
     console.log('LOGIN')
@@ -7,7 +8,7 @@ const AuthController = {
 }
 
 class AuthRoute extends BaseRoute {
-  protected basePath = '/auth'
+  protected basePath = '/api/auth'
 
   // private authController: AuthController
   private authController: { login: () => void }
@@ -15,13 +16,12 @@ class AuthRoute extends BaseRoute {
   constructor() {
     super()
     this.authController = AuthController
-    console.log('here', this.authController)
   }
 
   initializeRoutes() {
     // this.router.post('/login', this.authController.login.bind(this.authController))
-    this.router.post('/login', () => {
-      console.log('LOGN')
+    this.router.post('/login', (request: REQUEST<AUTH__REQUEST__BODY>, response) => {
+      authController.login(request.body)
     })
   }
 }
