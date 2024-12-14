@@ -1,4 +1,5 @@
 import { BaseController } from 'src/controllers/baseController'
+import { logger } from 'src/services'
 import { AUTH__REQUEST__BODY } from 'src/types'
 
 class AuthController extends BaseController {
@@ -7,7 +8,7 @@ class AuthController extends BaseController {
   }
 
   public login(data: AUTH__REQUEST__BODY) {
-    console.log('controlled auth')
+    logger.log('controlled auth: ' + new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString())
   }
 }
 
