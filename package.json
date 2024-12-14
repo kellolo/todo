@@ -52,6 +52,7 @@
     "turbo": "2.3.3",
     "typescript": "5.5.4",
     "unplugin-vue-components": "0.27.5",
+    "uuid": "11.0.3",
     "vite": "6.0.1",
     "vite-plugin-vue-devtools": "7.6.5",
     "vitest": "2.1.5",

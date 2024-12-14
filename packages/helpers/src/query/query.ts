@@ -1,4 +1,4 @@
-import type { QueryAsyncItem } from '@/types'
+import type { QueryAsyncItem } from './types'
 
 const getAsyncFunction = async (item: QueryAsyncItem) => {
   try {

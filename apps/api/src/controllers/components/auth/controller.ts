@@ -1,14 +1,18 @@
 import { BaseController } from 'src/controllers/baseController'
-import { logger } from 'src/services'
+
 import { AUTH__REQUEST__BODY } from 'src/types'
 
 class AuthController extends BaseController {
   constructor() {
-    super()
+    super('auth_controller')
   }
 
-  public login(data: AUTH__REQUEST__BODY) {
-    logger.log('controlled auth: ' + new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString())
+  public async login(data: AUTH__REQUEST__BODY) {
+    try {
+      this.sendSuccess({}, {}, 200)
+    } catch (err) {
+      this.sendError(err, 'error')
+    }
   }
 }
 
