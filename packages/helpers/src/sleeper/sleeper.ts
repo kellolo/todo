@@ -14,7 +14,7 @@ export const sleeper = async (
 ): Promise<'wake' | 'failed'> => {
   let retries = 0
 
-  while (retries <= maxRepeats) {
+  while (retries < maxRepeats) {
     if (cb()) {
       return 'wake'
     }

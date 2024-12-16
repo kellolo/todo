@@ -1,6 +1,6 @@
 export type CollectionName = 'auth' | 'user' | 'todo'
 
-type BaseSchema = {
+export type BaseSchema = {
   $id: string
   created: string // ISO Date
   updated?: string // ISO Date
