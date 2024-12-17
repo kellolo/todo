@@ -7,8 +7,13 @@ import type { BaseSchema, CollectionName } from '../../collection.types'
 
 type Handlers<T> = Record<CollectionName, T>
 type Collections = CollectionName[]
+type RequestTypes = 'findOne' | 'findMany' | 'insert' | 'insertMany' | 'deleteOne' | 'deleteMany'
+
+class CollectionsService {}
 
 export class DataHandler extends Woker {
+  private readonly MAX_INIT_ATTEMPTS = 5
+
   constructor(collections: Collections = ['auth', 'todo', 'user']) {
     super()
     this.collectionNames = collections
@@ -35,7 +40,7 @@ export class DataHandler extends Woker {
     this.inited = true
   }
 
-  private attemptsToInitiate: number = 5
+  private attemptsToInitiate: number = this.MAX_INIT_ATTEMPTS
   private inited: boolean = false
   private collectionNames: Collections
   private fileHandlers: Handlers<DataHandlerFS> | null = null
@@ -89,8 +94,53 @@ export class DataHandler extends Woker {
   }
 
   public destroy() {
-    this.ready = false
     this.fileHandlers = null
     this.hashHandlers = null
+  }
+
+  // Served methods for DB access
+  public async processRequest(collection: CollectionName, reqType: RequestTypes, payload: any) {
+    const fileHandler = this.fileHandlers![collection]
+    const hashHandler = this.hashHandlers![collection]
+
+    if (!(fileHandler && hashHandler && this.standBy)) {
+      throw new Error('DataHandler error: Handlers not initialized or system not ready')
+    }
+
+    const requestType = this._defineRequestType(reqType)
+    let processingResult = null
+    try {
+      switch (requestType) {
+        case 'single': {
+          const result = await this._processSingleRequest(/**something here */)
+          processingResult = this._postProcessRequestResult(/**something here */)
+          break
+        }
+        case 'multy': {
+          const result = await this._processMultyRequest(/**something here */)
+          processingResult = this._postProcessRequestResult(/**something here */)
+          break
+        }
+      }
+    } catch (err) {
+      throw new Error('DataHandler error: Request processing ERROR')
+    }
+    return processingResult
+  }
+
+  private _postProcessRequestResult(something: any) {
+    return //something
+  }
+
+  private async _processSingleRequest(something: any) {
+    return //something
+  }
+
+  private async _processMultyRequest(something: any) {
+    return //something
+  }
+
+  private _defineRequestType(request: RequestTypes): 'single' | 'multy' {
+    return /Many/gi.test(request) ? 'multy' : 'single'
   }
 }

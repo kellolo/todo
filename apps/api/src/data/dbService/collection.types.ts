@@ -1,4 +1,12 @@
 export type CollectionName = 'auth' | 'user' | 'todo'
+export type SCHEMAS = AuthSchema | TodoSchema | UserSchema
+/**
+ * $ - key
+ * _ - uniq
+ * : - 1 to 1
+ * :: - 1 to many
+ * ::: - many to many
+ */
 
 export type BaseSchema = {
   $id: string
@@ -17,8 +25,9 @@ export type AuthSchema = BaseSchema & {
 export type AuthCollection = Collection<AuthSchema>
 
 export type UserSchema = BaseSchema & {
-  login: string
+  _login: string
   password: string
+  'todo::$id': string[]
 }
 
 export type UserCollection = Collection<UserSchema>
