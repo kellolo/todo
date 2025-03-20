@@ -1,0 +1,11 @@
+@import "./tailwind.scss";
+@import './vars.scss';
+
+html, body {
+  background-color: $black;
+  font-family: sans-serif;
+}
+
+p, h1, h2 {
+  color: $text-prime;
+}

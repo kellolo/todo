@@ -1,9 +1,9 @@
 import uuid from 'uuid'
 import { Model } from '../model'
-import type { CollectionName } from '../../collection.types'
+import type { CollectionName, SCHEMA, SingleCollectionSchema } from '../../collection.types'
 
-export class Collection<T> {
-  constructor(data: T[], name: CollectionName) {
+export class Collection<T extends SCHEMA> {
+  constructor(data: SingleCollectionSchema<T>, name: CollectionName) {
     this.items = data
     this.keyIds = new Set(data.map(item => (item as { $id: string })['$id']))
     this.idPrefix = name.slice(0, 2)

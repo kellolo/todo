@@ -68,12 +68,14 @@
     "packages/*"
   ],
   "dependencies": {
-    "@primevue/forms": "^4.2.4",
+    "@primevue/forms": "4.2.4",
     "@primevue/themes": "4.2.4",
+    "@tailwindcss/vite": "4.0.14",
     "express": "4.21.2",
     "ky": "1.7.3",
     "pinia": "2.2.6",
     "primevue": "4.2.4",
+    "tailwindcss": "4.0.14",
     "vue": "3.5.13",
     "vue-router": "4.4.5"
   },
