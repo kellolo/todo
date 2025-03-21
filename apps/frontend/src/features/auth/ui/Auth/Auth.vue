@@ -1,17 +1,21 @@
 <template>
-  <div class="auth">
+  <div class="auth col-center size-full">
     <FormAuth @login="loginHandler" />
   </div>
 </template>
 
 <script setup lang="ts">
 import {} from 'vue'
-import type { AuthData } from '@/features/auth'
-import { login } from '@/features/auth'
+import { useNavigation } from 'frontend/src/shared'
+import { type AuthData, login } from 'frontend/src/features/auth'
 
 import { FormAuth } from './components'
+
+const { goHome } = useNavigation()
+
 const loginHandler = async (data: AuthData) => {
-  await login(data)
+  // await login(data)
+  goHome()
 }
 </script>
 

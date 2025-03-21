@@ -1,9 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./",
+    "types": ["vite/client"],
+    "baseUrl": "frontend/",
     "paths": {
-      "@/*": ["./src/*"]
+      "@": ["frontend/src/*"]
     }
   },
   "files": [],

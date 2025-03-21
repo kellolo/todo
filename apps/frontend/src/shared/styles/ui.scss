@@ -1,0 +1,13 @@
+@use './vars.scss' as *;
+
+// buttons
+
+.btn {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: $text-white !important;
+  &--prime {
+    background-color: $bg-primary !important;
+  }
+}

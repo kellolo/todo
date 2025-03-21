@@ -1,4 +1,5 @@
-import '@/shared/styles/global.scss'
+import 'frontend/src/shared/styles/tailwind.css'
+import 'frontend/src/shared/styles/global.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

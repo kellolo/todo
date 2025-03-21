@@ -1,4 +1,4 @@
-import useAuthStore from './store'
+import { useAuthStore } from './store'
 import type { AuthData } from './types'
 export const login = async (data: AuthData) => {
   const authStore = useAuthStore()

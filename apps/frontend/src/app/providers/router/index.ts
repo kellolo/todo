@@ -1,14 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import { HomePage } from '@/pages/'
+import { Home, Auth } from 'frontend/src/pages'
 
 export default createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      name: 'root',
+      component: Auth,
+    },
+    {
+      path: '/home',
       name: 'home',
-      component: HomePage,
+      component: Home,
+    },
+    {
+      path: '/auth',
+      name: 'auth',
+      component: Auth,
     },
   ],
 })

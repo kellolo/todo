@@ -8,8 +8,9 @@
     "types": ["node", "jest", "vue"],
     "paths": {
       "@repo": ["packagess"],
+      "@frontend": ["apps/frontend/src/*"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["."]
+  "include": ["."],
 }

@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { MainLayout } from '@/shared'
+import { MainLayout } from 'frontend/src/shared'
 </script>
 
 <style scoped lang="scss"></style>

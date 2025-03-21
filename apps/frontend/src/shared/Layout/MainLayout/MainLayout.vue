@@ -1,7 +1,7 @@
 <template>
-  <div class="app__wrapper">
-    <Header />
-    <main>
+  <div class="app__wrapper min-h-screen flex flex-col">
+    <Header class="shrink-0" />
+    <main class="size-full flex-1 overflow-y-auto">
       <slot name="content" />
     </main>
     <Toaster />

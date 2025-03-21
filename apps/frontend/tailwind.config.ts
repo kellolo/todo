@@ -3,6 +3,8 @@
 export default {
   // presets: [uiKitConfig],
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}', '../../packages/ui-kit/src/**/*.{vue,js,ts,jsx,tsx}'],
+  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  important: true,
   theme: {
     extend: {
       colors: {

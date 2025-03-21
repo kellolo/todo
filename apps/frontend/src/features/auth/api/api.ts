@@ -1,4 +1,4 @@
-import type { AuthData } from '@/types'
+import type { AuthData } from 'frontend/src/shared'
 import { APIService } from '@repo/api-service'
 import { putToast } from '@repo/widgets'
 

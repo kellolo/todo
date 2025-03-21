@@ -1,11 +1,9 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 
-import { APIAuthService } from '@/features'
+import { type AuthData, APIAuthService } from 'frontend/src/features'
 
-import type { AuthData } from '@/types'
-
-const useAuthStore = defineStore('auth', () => {
+export const useAuthStore = defineStore('auth', () => {
   async function login(data: AuthData) {
     try {
       await APIAuthService.login(data)
@@ -20,5 +18,3 @@ const useAuthStore = defineStore('auth', () => {
     login,
   }
 })
-
-export default useAuthStore

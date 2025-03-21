@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* Глобальные стили */
+@layer base {
+  .no-border {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important
+  }
+
+
+}
+
+@layer utilities {
+  /* flex */
+  .col-center {
+    @apply flex flex-col justify-center items-center
+  }
+
+  .col-between {
+    @apply flex flex-col justify-between items-center
+  }
+
+  .row-center {
+    @apply flex flex-row justify-center items-center
+  }
+
+  .row-between {
+    @apply flex flex-row justify-between items-center
+  }
+}
